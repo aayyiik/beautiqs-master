@@ -58,7 +58,7 @@
               <table class="table table-bordered"> 
                
                 <tr><td>
-                  <div class="form-group col-md-6">
+                  {{-- <div class="form-group col-md-6">
                     <label for="formGroupExampleInput2" class="form-label">Pegawai</label>
                     <select name="id_user" id="users" class="form-control">  
                       <option value="">- Pilih -</option>
@@ -66,8 +66,12 @@
                       <option value="{{ $us->id_user }}">{{ $us->nama_user }}</option>
                     @endforeach                      
                </select>                   
+                </div> --}}
+                    
+                <div class="from-group {{ $errors->has('nama_sup') ? 'has-error' : '' }}">
+                  <label for="formGroupExampleInput" class="form-label">Pemesan</label>
+                  <input name="id_user" type="text" value="{{Auth::user()->nama_user}}"class="form-control" id="formGroupExampleInput">
                 </div>
-                
 
               <div class="form-group col-md-6">
                 <label for="formGroupExampleInput2" class="form-label">Supplier</label>
@@ -109,7 +113,6 @@
       </div>
       <div class="modal-body">
        
- 
         <table class="table table-striped" id="datatables">
           <thead>
             <tr>

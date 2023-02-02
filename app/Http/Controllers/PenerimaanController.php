@@ -120,4 +120,13 @@ class PenerimaanController extends Controller
             session()->forget("masuk");
             return redirect("/penerimaan/form");
         }
+
+        public function approved($id_terima){
+            Penerimaan::where('id_terima',$id_terima)->update([
+                'status_terima'=>1
+               
+            ]);
+            return redirect('/penerimaan');
+            
+        }
 }

@@ -102,33 +102,6 @@ public function forceDelete($kode_barang = null){
     return redirect('barang/trash')->with('sukses','Data Berhasil dihapus permanen');
 }
 
-// public function show ($kode_barang){
-//     $barang = Barang::find($kode_barang);
-//     $ukuran = Ukuran::all();
-//     $warna = Warna::all();
-//     $datbar = DetailBarang::all();
-//     return view('barang.detail',['barang' => $barang], compact('ukuran','warna'));
-// }
-
-// public function createdetail (Request $request, $kode_barang){
-   
-//     $this->validate($request,[
-//         'kode_barang' => 'required|max:100',
-//         'id_warna' => 'required',
-//         'id_ukuran' => 'required',
-
-//     ]);
-
-//     $barang = \App\Models\Barang::find($kode_barang);
-//     DetailBarang::create([
-
-//         'kode_barang' => request('kode_barang'),
-//         'id_warna' => request('id_warna'),
-//         'id_ukuran' => request('id_ukuran'),
-//     ]);
-// //   \App\Models\DetailBarang::create($request->all());
-//   return redirect('barang/detail');
-// }
 
     public function detail($id){
 

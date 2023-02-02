@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Penerimaan extends Model
 {
@@ -33,9 +34,9 @@ class Penerimaan extends Model
     static function tambah_id_terima(){
         $data = Penerimaan::create([
             "tgl_terima"=> date("Y-m-d"),
-            "status_terima"=> 1,
+            "status_terima"=> 0,
             "id_sup"=>1,
-            "id_user"=>27,
+            "id_user"=>Auth::user()->id_user,
             "total_harga"=>100000,
         ]);
         return $data->id_terima;

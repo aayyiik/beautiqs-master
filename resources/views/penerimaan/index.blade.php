@@ -35,13 +35,23 @@
                                               <td>{{ $tm->user->nama_user }}</td>
                                               <td>{{ $tm->tgl_terima }}</td>
                                               <td>{{ $tm->total_harga }}</td>
-                                              <td><label class="label {{ ($tm->status_terima == 0) ? 'label-success' : 'label-danger'}}">{{ ($tm->status_terima == 0)
-                                              ? 'Telah Diterima' : 'Belum Diterima' }}</label>
+                                              <td><label class="label {{ ($tm->status_terima == 0) ? 'label-danger' : 'label-success'}}">{{ ($tm->status_terima == 0)
+                                              ? 'Belum Diterima' : 'Telah Diterima' }}</label>
                                              </td>
-                                             <td> <a role="button" href="/pembayaran/{{$tm->id_terima}}/bayar" class="btn btn-warning btn-sm"> <i class="fa fa-money"></i> </a>               
-                                             </button>
+                                             <td> 
+                                            
+                                              <a role="button "href="/penerimaan/approved/{{ $tm->id_terima }}"  class="btn btn-primary btn-sm">
+                                                <i class="fa fa-paint-brush"></i> 
+                                                </a>    
+
+                                                @if($tm->status_terima == 0)
+                                            <a role="button" href="/pembayaran/{{$tm->id_terima}}/bayar" class="btn btn-warning btn-sm"> <i class="fa fa-money"></i> </a>               
+                                              @else
+                                              <a role="button" href="/pembayaran/{{$tm->id_terima}}/bayar" class="btn btn-warning btn-sm disabled" aria-disabled="true"> <i class="fa fa-money"></i> </a>           
+                                              @endif
+                                              
                                              <a role="button" href="/penerimaan/{{$tm->id_terima}}/detail" class="btn btn-secondary btn-sm"> <i class="fa fa-list"></i> </a>              
-                                            </button>
+                                         
                                             </td>
                                             </tr>
                                           @endforeach

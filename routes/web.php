@@ -46,7 +46,7 @@ Route::get('/logout',[AuthController::class,'logout'] );
 //Route::get('/dashboard',[DashboardController::class,'index'])->middleware('auth');
 //Route::get('/dashboard',[AdminController::class,'dashboard']);
 
-Route::group(['middleware' => ['auth','checkRole:2']], function(){
+Route::group(['middleware' => ['auth','checkRole:1']], function(){
 
     
 //users buatan sendiri
@@ -74,7 +74,7 @@ Route::get('role/{id_sup}/forceDelete', [RoleController::class,'forceDelete']);
 });
 
 
-Route::group(['middleware' => ['auth','checkRole:1']], function(){
+Route::group(['middleware' => ['auth','checkRole:2']], function(){
 //pemesanan
 Route::get('/pemesanan',[PemesananController::class,'index']);
 
@@ -171,7 +171,7 @@ Route::get('penerimaan/{id_terima}/detail', [PenerimaanController::class,'detail
 // Route::post('penerimaan/{id_pesan}/update', [PenerimaanController::class,'update']);
 
 //penerimaaan 2
-
+Route::get('penerimaan/approved/{id_terima}',[PenerimaanController::class,'approved']);
 Route::get('penerimaan/form',[PenerimaanController::class,'form']);
 Route::get('penerimaan/{kode_barang}/terima',[PenerimaanController::class,'do_tambah_barang'])->where("kode_barang","[0-9]+");
 Route::get('penerimaan/form',[PenerimaanController::class,'masuk']);

@@ -30,7 +30,6 @@
                           <td>{{ $byr->tgl_bayar }}</td>
                           <td>{{ $byr->total_bayar }}</td>
                           <td>{{$byr->bukti}}</td>
-                          
                       
                       </tr>
                       @endforeach

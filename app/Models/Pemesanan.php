@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class Pemesanan extends Model
@@ -39,7 +40,7 @@ class Pemesanan extends Model
           "tgl_pesan"=> date("Y-m-d"),
           "status_pesan"=> 0,
           "id_sup"=>1,
-          "id_user"=>27,
+          "id_user"=>Auth::user()->id_user,
       ]);
       return $data->id_pesan;
     }

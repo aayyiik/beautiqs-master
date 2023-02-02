@@ -4,7 +4,7 @@
             <ul class="nav">
                
                 <li><a href="/dashboard"><i class="lnr lnr-home"></i><span>Dashboard</span></a></li>
-                @if(auth()->user()->id_role=='2')
+                @if(auth()->user()->id_role=='1')
                     <li><a href="/users"><i class="lnr lnr-user"></i><span>User</span></a></li> 
                     <li><a href="/role"><i class="lnr lnr-book"></i><span>Role</span></a></li>
                 @endif
@@ -32,10 +32,10 @@
                     <div id="subPages1" class="collapse ">
                         <ul class="nav">
 
-                                @if(auth()->user()->id_role=='1')
+                                @if(auth()->user()->id_role=='2')
                                     <li><a href="/pemesanan"><i class="lnr lnr-book"></i><span>Pemesanan</span></a></li>
                                     <li><a href="/penerimaan"><i class="lnr lnr-book"></i><span>Penerimaan</span></a></li>
-                                    @elseif(auth()->user()->id_role=='2')
+                                    @elseif(auth()->user()->id_role=='1')
                                         <li><a href="/pembayaran"><i class="lnr lnr-book"></i><span>Pembayaran</span></a></li>
                                          <li><a href="/penerimaan"><i class="lnr lnr-book"></i><span>Penerimaan</span></a></li>
                                 @endif
