@@ -1,7 +1,7 @@
 # Halo semua! 
 
 Project kali ini bernama **Beautiqs**.\
-**Beautiqs** adalah sistem informasi pengadaan barang secara online. 
+**Beautiqs** adalah sistem informasi pengadaan barang secara online. (UPDATED 2022)
 
 Gambaran Sistem :
 - Sistem Informasi Pengadaan Barang mampu mengelola proses manajemen pengadaan barang boutique secara terkomputerisasi. 
@@ -21,5 +21,5 @@ Proses pengembangan :
 - Boostrap
 
 Dikerjakan Oleh :
-- Ari Lathifatul Chusna (saya) membuat Web Admin.
+- Ari Lathifatul Chusna (saya) membuat Web Admin. (pengembang contined)
 - Rugayyah Syadziliyah Setiawan membuat landing page.
